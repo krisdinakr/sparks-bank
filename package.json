@@ -1,0 +1,12 @@
+{
+  "name": "sparks-bank",
+  "version": "0.1.0",
+  "description": "This project is a #task1 Graduate Rotational Internship Program from The Sparks Foundation. This is a simple website that implements a basic banking system.",
+  "main": "index.js",
+  "author": "Krisdina",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
