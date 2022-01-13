@@ -4,7 +4,7 @@
     <p class="card-small">{{ accountNumber }}</p>
     <h3 class="card-subtitle">Balance</h3>
     <div class="card-info">
-      <p v-show="isShow">{{ balanceToShow }}</p>
+      <p v-show="isShow">{{ getBalance }}</p>
       <p v-show="!isShow">tap to see</p>
       <div class="card-btn" @click="handleToggle">
         <img v-show="!isShow" src="@/assets/visibility.svg" alt="show icon">
@@ -18,8 +18,7 @@
 export default {
   data() {
     return {
-      isShow: false,
-      balanceToShow: Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(this.balance)
+      isShow: false
     }
   },
   methods: {
@@ -31,6 +30,11 @@ export default {
     name: String,
     accountNumber: String,
     balance: Number,
+  },
+  computed: {
+    getBalance() {
+      return Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR'}).format(this.balance)
+    }
   }
 }
 </script>
